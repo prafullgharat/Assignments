@@ -1,0 +1,106 @@
+.parallax{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height:600px;
+    position: relative;
+}
+
+.heading{
+    background-image: url(Tourism-Industry-in-India.png);
+    height: 100vh;
+   
+}
+.one{
+    background-image: url(taj\ mahal2.jpg);
+    
+}
+.two{
+    background-image: url(golden\ temple\ 3.jpg);
+    /* min-height:600px;} */
+}
+
+.three{
+    background-image: url(goa\ 2.jpg);
+    /* min-height:600px;} */
+}
+
+
+.normal{
+    background-color: #ddd ;
+    color:  #282e34;
+    padding:20px;
+    line-height: 1.8em;
+    text-align: center;
+    padding: 30px 150px;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    
+}
+
+.normal.white{
+    background-color: #ddd ;
+    color:  #282e34;
+}
+
+
+.imageText{
+    position: absolute;
+    top: 40%;   
+    left:40%;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 40px;  
+    padding: 20px 40px;   
+    background-color: rgb(40, 46, 52,0.8);   
+    color: #ddd;
+}
+
+
+.one .imageText{
+    position: absolute;
+    top: 10%;    
+    left: 10%;
+    text-align: left;
+    font-size: 60px;
+    color: whitesmoke;
+    background-color: transparent;
+}
+
+.two .imageText{
+    position: absolute;
+    top: 10%;    
+    left: 10%;
+    text-align: left;
+    font-size: 60px;
+    color: #db881f;
+    background-color: transparent;
+    
+
+}
+.three .imageText{
+    position: absolute;
+    top: 45%;    
+    left: 45%;
+}
+
+h2{
+    text-align: center;
+}
+
+@media screen and (max-width:1000px){
+    .parallax{        
+        min-height:450px;
+    }
+}
+
+
+@media screen and (max-width:600px){
+    .parallax{
+        background-attachment: static;
+        min-height:300px;
+       
+    }
+}
+

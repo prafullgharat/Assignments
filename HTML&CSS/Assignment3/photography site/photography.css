@@ -1,0 +1,169 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-image: linear-gradient( 115deg, rgba(58, 58, 156, 0.6), rgba(136, 136, 206, 0.5) ),url(header4.jpg);
+    background-attachment: static;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;  
+    height: 90vh;
+    
+    color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;   
+}
+
+
+
+h1{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    margin: 20px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+header p{
+
+    font-size: 40px;
+    font-weight: 400;
+    padding: 0 30%;
+    text-align: center;
+    color:#fff;
+    font-family: sans-serif;
+    
+}
+
+
+#view{
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    font-family: sans-serif;
+    font-size: 20px;  
+    padding: 20px 40px;   
+    background-color: rgba(40, 46, 52,0.8);   
+    color: #ddd;
+
+}
+
+main{
+/* padding: 100px 0; */
+}
+main h1{
+    width: 60%;
+    margin: 70px auto 50px;
+    color: rgb(58, 58, 156);
+    
+}
+
+.index{
+    
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row wrap;
+ 
+}
+
+.index a{
+    flex: 1 1 0;
+    text-decoration: none;
+    border: 1px solid  rgb(58, 58, 156);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.index a:hover{
+   color:  rgb(93, 93, 255);;
+   background-color: whitesmoke;
+}
+
+.container {
+    box-sizing: border-box;
+    display: flex;
+    margin-top: 60px;
+    padding: 0 4px;
+    flex-flow: row wrap;
+}
+  
+
+
+.container div{
+    flex: auto;
+    width: 400px;
+    margin: .5vw;
+}
+
+.container div img{
+  
+    width: 100%;
+    height: auto;
+}
+
+
+footer{
+    background-color:rgb(58, 58, 156);;
+    background-image: linear-gradient( 115deg, rgba(47, 47, 160, 0.8), rgba(136, 136, 206, 0.9) );
+    
+    text-align: center;
+    margin-top: 100px;
+    color:#fff;
+    font-family: Century Gothic, sans-serif;
+    font-size: 30px;
+    padding: 50px;
+}
+
+
+@media only screen and (max-width:1000px){
+
+    header{
+        width: 100%;
+        height: 500px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    header p{
+        font-size: 25px;
+    }   
+    #view{
+        padding: 5px 15px;
+    }
+
+}
+
+@media only screen and (max-width:767px){
+
+    header{
+        width: 100%;
+        height: 300px;
+    }
+    h1{
+        font-size: 30px;
+    }
+    header p{
+        font-size: 20px;
+    }
+    #view{
+        padding: 5px 10px;
+    }
+
+}
+
+
+

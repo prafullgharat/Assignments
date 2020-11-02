@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(173, 245, 241);
+}
+a{
+    color: darkgreen;    
+}
+a:visited{
+    color: red;
+}

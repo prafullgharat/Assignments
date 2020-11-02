@@ -1,0 +1,6 @@
+body{
+    background-color: rgb(173, 245, 241);
+}
+.uppercase{
+    text-transform: uppercase;
+}

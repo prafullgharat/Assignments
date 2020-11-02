@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(169, 231, 218);
+}
+
+h2{
+    text-decoration: line-through;
+}
+h3{
+    text-decoration: underline;
+}
