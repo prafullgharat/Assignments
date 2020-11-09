@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>6. Create a string that contains what looks like an object with firstName and lastName properties. Use
+        “eval” to turn it into a real object, and test it the same way you did with the previous object that you
+        created directly
+    </h3>
+
+    <br><br>
+    <p id="fname"></p>
+    <p id="lname"></p>
+    <p id="mname"></p>
+    
+    <input type="text" id="input" placeholder="Enter middle name" >
+    <input type="button" value="Change Middle Name" onclick="change()">
+    
+
+    <script>
+
+        var person = '({"firstName" : "rohit", "lastName" : "sharma" })';
+        console.log(person);
+        var person2 = eval(person);
+        console.log(person2);
+
+        document.getElementById("fname").innerHTML="<h3>First Name : "+person2.firstName+"</h3>";
+        document.getElementById("lname").innerHTML="<h3>Last Name : "+person2.lastName+"</h3>";
+        document.getElementById("mname").innerHTML="<h3>Middle Name : "+person2.middleName+"</h3>";
+
+        function change(){
+            var input = document.getElementById("input").value;
+            person2.middleName = input;
+            document.getElementById("mname").innerHTML="<h3>Middle Name : "+person2.middleName+"</h3>";
+        }
+
+    </script>
+</body>
+</html>

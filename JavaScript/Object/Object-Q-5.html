@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>5. Try reading the middleName property from your variable above. Try assigning to the middleName
+        property. Try reading the property again after you assign to it. Is this behavior a good thing or a bad
+        thing?</h3>
+
+        <br>
+    <br><br>
+    <p id="fname"></p>
+    <p id="lname"></p>
+    <p id="mname"></p>
+    
+    <input type="text" id="input" placeholder="Enter middle name" >
+    <input type="button" value="Change Middle Name" onclick="change()">
+    
+   
+    <script>
+
+        var person = {firstName : "rohit",lastName : "sharma"};
+   
+
+        document.getElementById("fname").innerHTML="<h3>First Name : "+person.firstName+"</h3>";
+        document.getElementById("lname").innerHTML="<h3>Last Name : "+person.lastName+"</h3>";
+        document.getElementById("mname").innerHTML="<h3>Middle Name : "+person.middleName+"</h3>";
+
+
+        function change(){
+
+            var input = document.getElementById("input").value;
+            person.middleName = input;
+            document.getElementById("mname").innerHTML="<h3>Middle Name : "+person.middleName+"</h3>";
+
+        
+        }
+        
+    </script>
+</body>
+</html>

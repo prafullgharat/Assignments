@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myCalculator</title>
+</head>
+<body>
+    <h3>Assignment 4:
+        In this assignment, we will write a JavaScript web application called MyCalculator. All 3 files (the
+        .js, .html and .css files should be in the MyCalculator folder and should be called
+        MyCalculator.XXX). 
+    </h3>
+
+    <input type="button" value="myCalculator" onclick="myCalculator()">
+<br><br>
+    Result:<input type="text" name="result" id="result">
+
+    <script>
+        function myCalculator(){
+            var choice;
+            promptMenu();
+            function promptMenu(){
+                while(true){
+                    choice = parseInt(prompt("1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Exponent\n6. Mean\n7. Quit"));
+                        if(choice>=1 && choice<=7){
+                            break;
+                        }else{
+                            alert("Please choose correct option");
+                        }
+                }
+            }
+
+            switch(choice){
+
+                case 1:              
+                    var num1 = prompt("Enter number 1");
+                    var num2 = prompt("Enter number 2");
+                    if(!(isNaN(num1)&&isNaN(num2))){
+                        document.getElementById("result").value=Number(num1)+Number(num2);
+
+                    }else{
+                        alert("Enter Valid Input");
+                        promptMenu();
+                    }
+                    break;
+
+
+                case 2:
+                    var num1 = prompt("Enter number 1");
+                    var num2 = prompt("Enter number 2");
+                    if(!(isNaN(num1)&&isNaN(num2))){
+                        document.getElementById("result").value=Number(num1)-Number(num2);
+                    }else{
+                        alert("Enter Valid Input");
+                        promptMenu();
+                    }
+                    break;
+
+
+                case 3:
+                    var num1 = prompt("Enter number 1");
+                    var num2 = prompt("Enter number 2");
+                    if(!(isNaN(num1)&&isNaN(num2))){
+                        document.getElementById("result").value=Number(num1)*Number(num2);
+                    }else{
+                        alert("Enter Valid Input");
+                        promptMenu();
+                    }
+                    break;
+
+
+                case 4:
+                    var num1 = prompt("Enter number 1");
+                    var num2 = prompt("Enter number 2");
+                    if(!(isNaN(num1)&&isNaN(num2))){
+                        document.getElementById("result").value=Number(num1)/Number(num2);
+                    }else{
+                        alert("Enter Valid Input");
+                        promptMenu();
+                    }
+                    break;
+
+
+                case 5:
+                    var num1 = prompt("Enter number 1");
+                    var num2 = prompt("Enter number 2");
+                    if(!(isNaN(num1)&&isNaN(num2))){
+                        document.getElementById("result").value=Math.pow(Number(num1),Number(num2));
+                    }else{
+                        alert("Enter Valid Input");
+                        promptMenu();
+                    }
+                    break;
+
+                
+                case 6:
+                    var series = prompt("Enter series of numbers(eg- 1,2,3,4,5,***). ");
+                    var len = series.length;
+                    var numbers = series.substr(0,len-4);
+                    var array = numbers.split(",");
+                    var sum=0;
+                    for(i=0;i<array.length;i++){
+                        sum+=Number(array[i]);
+                    }
+                    var average=sum/array.length;
+                    document.getElementById("result").value=average;
+                    break;
+
+
+                case 7:
+                    close();
+                    break;
+
+                
+                
+            }
+         
+
+        }
+
+
+    </script>
+</body>
+</html>

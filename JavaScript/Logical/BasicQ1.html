@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 1. Make a function that returns “even” or “odd” depending on the number passed to it.
+         parity(1); --> "odd"
+         parity(2); --> "even"
+    </h3>
+
+    <br><br>
+    <input type="text" id="input">
+    <button onclick="check()">Check</button>
+    <br>
+    Result:
+    <p id="result"></p>
+    
+    <script>
+        function parity(no){
+            if(no%2 == 0){
+                return "even";
+            }
+            else{
+                return "odd";
+            }
+        }
+
+        function check(){
+            var num  = Number(document.getElementById("input").value);
+            var result = parity(num);
+            document.getElementById("result").innerHTML = result;
+
+        }
+        
+    </script>
+</body>
+</html>
+

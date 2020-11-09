@@ -1,0 +1,46 @@
+body{
+    font-family: 'Arial';
+    margin: 20px;
+    font-size: 80%;
+    background-color: #eee;
+}
+
+
+#help{
+    float: right;
+}
+
+
+#summary-heading{
+    position: relative;
+    left:10%;
+    font-size: large;
+    margin: 0;
+}
+
+table{
+   border:1px solid black;
+   font-size: 20px;
+}
+
+th{
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    padding:0 10px;
+}
+
+td{
+    padding:0 10px;
+}
+
+tr:nth-child(even){
+    background-color: #eee;
+}
+tr:nth-child(odd){
+    background-color: #fff;
+}
+
+#error{
+    color: red;
+}

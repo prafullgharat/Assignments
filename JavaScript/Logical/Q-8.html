@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        8) Write a program that prints all prime numbers.
+    </h3>
+
+    <script>
+
+        function isPrime(i){
+            for(j = 2; j < ( Math.floor(Math.sqrt(i)) + 1); j++){
+                if(i%j == 0){
+                    return false ;
+                }
+            }
+            return true;
+        }
+        
+        document.write("<br><br><h3>Prime numbers upto 1000000 are :</h3><br>" + 2 +" ");
+        for(i = 3; i <= 1000000; i=i+2){ 
+            if(isPrime(i)){
+                document.write(i+" ");
+            } 
+
+        }
+    </script>
+</body>
+</html>

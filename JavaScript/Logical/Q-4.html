@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        4) Write a program that asks the user for a number n and prints the sum of
+        the numbers 1 to n .
+       
+    </p>
+
+    <input type="number" placeholder="Enter a number" name="num" id="num">
+    <br><br>
+    <button id = "btn" onclick="sum()">SUM</button>
+    <br><br>
+
+    <p id="result"></p>
+
+    <script>
+        function sum(){
+            var sum = 0;
+            var num = Number(document.getElementById("num").value);
+            for( i= 1; i<=num; i++){
+                
+                    sum += i;
+                    
+            }
+            document.getElementById("result").textContent = "Sum is :"+ sum;
+
+        }
+    </script>
+</body>
+</html>

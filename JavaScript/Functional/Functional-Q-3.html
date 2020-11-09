@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>3. Make a function called “find” that takes an array and a test function, and returns the first element of
+        the array that “passes” (returns non-false for) the test. Don’t use map, filter, or reduce.
+        function isEven(num) { return(num%2 == 0); }
+        isEven(3) --> false
+        isEven(4) --> true
+        find([1, 3, 5, 4, 2], isEven); --> 4
+        </h3>
+
+
+        <!-- <br><br>
+        <br>
+        <p>list1 = [1, 3, 5, 4, 2];</p>
+        <p>function = isEven;</p>
+        <p id="result"></p> -->
+
+        Array :<input type="text" id="input" value="1, 3, 5, 4, 2">
+        <br>
+        <br>
+        click here to find first even number in the array.
+        <br>
+        <button onclick="test()">Find</button>
+        
+        <br>
+        <p id="result"></p>
+
+
+
+        <script>
+            function find(list,func){
+            
+                for(i=0;i<list.length;i++){
+
+                    if(func(list[i])){
+                        return list[i];
+                    }
+                }
+                 return "undefined";
+            }
+
+        
+            function isEven(num) {
+                return(num%2 == 0); 
+            }
+
+       
+
+            function test(){
+            
+                var list = document.getElementById("input").value.split(",");
+                console.log(list);
+                var result = find(list,isEven) ;
+                document.getElementById("result").textContent="Result: "+result;
+            }
+            
+        </script>
+</body>
+</html>

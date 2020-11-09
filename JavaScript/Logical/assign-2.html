@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Assignment 2:
+        Write a script which uses a prompt box to get an input. Validate that the input is an Integer
+        between 1 and 30, and then print to the page asterisks (*) to represent the number. Your script
+        must run until you have collected 3 valid inputs as well as generate 3 outputs (one output on one
+        line).
+        Example:
+        Input: 4
+        Input: 6
+        Input: 12
+        ****
+        ******
+        ************ </h3>
+
+
+     <br><br><br>
+    
+    <button id="btn" onclick="printAsterisk()">Click</button>
+
+    <p id="t1"></p>
+    <p id="t2"></p>
+    <p id="t3"></p>
+
+    <script>
+      
+        function printAsterisk(){
+            var array = [];
+
+            for(i=0;i<3;i++){
+                var bool = false;
+                var x = prompt("Please enter an integer between 1 to 30");
+                while(bool === false){
+                    if(!(isNaN(x))){
+                        x = Number(x);
+
+                        if((Number.isInteger(x))){
+
+                            if(x>=1 && x<=30){
+                                array.push(x);
+                                bool = true;
+                            }
+                            else{
+                                bool = false;
+                            }
+                        }
+                        else{
+                            bool = false;
+                        }
+                    }
+                    else{
+                        bool = false;
+                    }
+
+
+                    if(bool === false){
+                        var x = prompt("You have not entered integer between 1 to 30. Please enter an integer again");
+                    }
+                }
+            }
+
+            console.log(array);
+            
+            document.getElementById("t1").innerHTML+="*".repeat(array[0]);
+            document.getElementById("t2").innerHTML+="*".repeat(array[1]);
+            document.getElementById("t3").innerHTML+="*".repeat(array[2]);
+            
+
+           
+
+        }
+            
+    </script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        9) Write a guessing game where the user has to guess a secret number. After
+every guess the program tells the user whether their number was too large
+or too small. At the end the number of tries needed should be printed. It
+counts only as one try if they input the same number multiple times
+consecutively. 
+    </h3>
+    <br><br>
+    <button id = "btn" onclick="guess()">Play </button>
+    
+  
+    <p id="result"></p>
+
+    <script>
+        function guess(){
+    
+            var num = Math.floor(Math.random()*100) +1;
+            console.log(num);
+            var count = 1;
+            var input = prompt(" Guess a number between 1 and 100");
+            var previous = input;
+            while( num != input ){
+                if(num > input){
+                    var input = prompt("Your guess is too small. Guess again...");
+                }
+                else{
+                    var input = prompt("Your guess is too big. Guess again...");
+                }
+
+                if (input != previous){
+                    count++;
+                    previous = input;
+                    console.log(count);
+                } 
+
+            }
+            alert("You have guessed the number correctly. Your number of attempts are "+ count);
+
+        }
+       
+    </script>
+</body>
+</html>

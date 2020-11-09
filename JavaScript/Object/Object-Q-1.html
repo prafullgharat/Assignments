@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1. Make a Rectangle class that stores a width and a height. Make a few instances and print out the
+        properties. Modify a few of the properties and print out the results again.
+    </h3>
+
+<br>
+
+    Rectangle<br>
+    Height:<input type="text" id="height" value="5">
+    <br>
+    width:<input type="text" id="width" value="7">
+    <br>
+
+    <input type="button" value="Create Instance" onclick="createInstance()">
+    
+    <p id="result1"></p>
+    <p id="result2"></p>
+
+
+    <script>
+        class Rectangle{
+            constructor (height,width){
+                this.height = height;
+                this.width = width;
+                
+            }
+        }
+
+
+
+        function createInstance(){
+            var height = document.getElementById("height").value;
+            var width = document.getElementById("width").value;
+            
+            var rectangle = new Rectangle(height,width);
+
+            document.getElementById("result1").innerHTML="Height of the Rectangle : "+rectangle.height;
+            document.getElementById("result2").innerHTML="Width of the Rectangle : "+rectangle.width;
+
+        }
+
+    </script>
+</body>
+</html>

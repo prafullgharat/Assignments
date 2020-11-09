@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>2. Make a “pure” recursive version of map. Hint: remember the slice and concat methods of arrays.
+        map([1, 2, 3, 4, 5], square); --> [1, 4, 9, 16, 25]
+        map([1, 4, 9, 16, 25], Math.sqrt); --> [1, 2, 3, 4, 5]
+    </h3>
+
+
+    Array :
+    <input type="text" id="input" value="1,4,9,16,25">
+    <br>
+    <button onclick="arraySquare()">Square</button>
+    
+    <button onclick="arraySqrt()">Square Root</button>
+    <br>
+    <p id="result"></p>
+
+    <script>
+
+        function square(x){
+            return (x*x);
+        }
+
+
+        function map(list,func){
+            var list2 = [];
+            if(list.length === 0){
+                 return list2 ;
+             }
+            
+            else{
+                list2[0] = func(list[0]);
+                return list2.concat(map(list.slice(1),func));
+            }
+        }
+
+        function arraySquare() {
+            var list = document.getElementById("input").value.split(",");
+            var result = map(list, square);
+            document.getElementById("result").textContent="Square of the array elements are: "+result;
+        }
+        function arraySqrt() {
+            var list = document.getElementById("input").value.split(",");
+            var result = map(list, Math.sqrt);
+            document.getElementById("result").textContent="Square of the array elements are: "+result;
+        }
+
+
+    </script>
+</body>
+</html>

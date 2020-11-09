@@ -1,0 +1,31 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>11) Write a function that returns the largest element in a list. </h3>
+
+    <br><br>
+    <p>list = [12,56,123,100]</p>
+    <p>largest element is: <span  id="result"></span></p>
+
+    <script>
+        function largestElement(list){
+            var largest = Number.MIN_VALUE;
+            for(i=0;i<list.length;i++){
+                if(list[i]>largest){
+                    largest = list[i];
+                }
+            }
+            return largest;    
+        }
+        document.getElementById("result").innerHTML = largestElement([12,56,123,100]);
+    </script>
+</body>
+</html>

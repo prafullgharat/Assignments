@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>20) Write a function that combines two lists by alternatingly taking elements, </h3>
+    <br><br>
+
+    <p>list1 = ["a", "b", "c"];</p>
+    <p>list2 = [1,2,3];</p>
+    <p id="concatenated-list"></p>
+
+    <script>
+        function concatenate(list1,list2){
+            var len1 = list1.length;
+            var len2 = list2.length;
+            var max;
+            var list3 =[];
+            if(len1<=len2){
+                min = len1;
+            } 
+            else{
+                min = len2;
+            }
+            for(i = 0; i<min; i++){
+                list3.push(list1[i]);
+                list3.push(list2[i]);
+
+            }
+            if(len1<len2){
+                for(i = min; i<len2; i++){
+                    list3.push(list2[i]);
+                }
+            }
+            else{
+                for(i = min; i<len1; i++){
+                    list3.push(list1[i]);
+                }
+            }
+
+            return list3;
+        }
+
+        var list1 = ["a", "b", "c"];
+        var list2 = [1,2,3];
+        var list3 = concatenate(list1, list2);
+        document.getElementById("concatenated-list").innerHTML = " Concatenated list: " + list3;
+
+    </script>
+</body>
+</html>

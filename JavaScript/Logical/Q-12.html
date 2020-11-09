@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>12) Write function that reverses a list, preferably in place. 
+    </h3><br><br>
+    
+    <p>Click the button to reverse the list.</p>
+
+    <button onclick="reverseList()">Reverse</button>
+
+    <p id="list"></p>
+
+    <script>
+
+        var list = [12,34,56,64];
+        document.getElementById("list").innerHTML = list; 
+        
+        function reverseList(){
+            list.reverse();
+            document.getElementById("list").innerHTML = list;
+        }
+    </script>
+</body>
+</html>

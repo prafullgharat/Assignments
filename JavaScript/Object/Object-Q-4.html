@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>4. Make a variable whose value is an object with firstName and lastName properties, but don’t define
+        a Person class first. Try looking up the first and last names. Try changing the last name. It seems
+        very odd to Java programmers to make an object without first defining a class, but JavaScript programmers
+         do this sort of thing all the time.
+    </h3>
+
+    <br><br>
+    <p id="fname"></p>
+    <p id="lname"></p>
+    
+    <input type="text" id="input" placeholder="change last name" >
+    <input type="button" value="Change Last Name" onclick="change()">
+    
+   
+    <script>
+        var person = {firstName : "rohit",lastName : "sharma"};
+
+        document.getElementById("fname").innerHTML="<h3>First Name : "+person.firstName+"</h3>";
+        document.getElementById("lname").innerHTML="<h3>Last Name : "+person.lastName+"</h3>";
+
+        function change(){
+            var input = document.getElementById("input").value;
+            person.lastName = input;
+            document.getElementById("fname").innerHTML="<h3>First Name : "+person.firstName+"</h3>";
+            document.getElementById("lname").innerHTML="<h3>Last Name : "+person.lastName+"</h3>";
+            
+
+        }
+        
+    </script>
+</body>
+</html>

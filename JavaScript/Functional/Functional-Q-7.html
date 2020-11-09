@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>3. JavaScript lets you define anonymous functions and call them right on the spot. For example,
+        (function(x) { return x*x; })(5) returns 25. Also, if you concatenate a string with a function, the
+        result is a string that looks more or less like the function definition. For example:
+        function square(x) { return x*x; }
+        "square is " + square
+        --> "square is function square(x) { return x * x; }"
+        Use these ideas to make an anonymous function call that outputs a string, where inside that string is
+        exactly what was typed in as the function call. I.e., you go to the Firebug console and type in
+        (function(...) {something})(blah)
+        and get back
+        "(function(...) {something})(blah)"
+        The return value should be exactly what you typed in, except that it has quotes around it, and it is
+        OK if the whitespace (spaces, carriage returns) in the return value is not exactly the same as in the
+        input. To make it even harder, you are not allowed to use arguments.callee or the arguments array at
+        all. It can be done with “function”, “return”, a variable name, parens, curly braces, and double
+        quotes: no obscure JavaScript feature (or anything else at all!) is needed. The answer is short, but
+        this is a very tricky problem. 
+    </h3>
+    <br>
+    <br>
+    <h3>Answer</h3>
+    
+    <script>
+        var x = function(){return "messaage"};
+        console.log(""+x);
+        document.write(""+x);
+    </script>
+</body>
+</html>

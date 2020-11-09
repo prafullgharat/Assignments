@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Make a function called calculation that, given three numbers a, b, and c, returns (a + b)/c. Try it
+        with a few normal values. Then, try to predict what you will get for calculation(1, 1, 0), calculation(-1, -1, 0), and calculation(1, -1, 0). Try those tests and see if you get what you expected.
+
+    </h3>
+
+    <br><br>
+    Number 1:<input type="text" id="input1"><br>
+    Number 2:<input type="text" id="input2"><br>
+    Number 3:<input type="text" id="input3">
+<br>
+    <button onclick="check()">Calculate</button>
+    <br>
+   
+    <p id="result1"></p>
+    
+    <p id="result2"></p>
+    
+    <p id="result3"></p>
+    
+    <p id="result4"></p>
+    
+    <script>
+        function calculation(a,b,c){
+            return (a+b)/c ;
+
+        }
+
+        console.log(calculation(1, 1, 0));
+        console.log(calculation(-1, -1, 0));
+        console.log(calculation(1, -1, 0));
+        document.getElementById("result2").innerHTML = "Answer for (1, 1, 0) is "+calculation(1, 1, 0);
+        document.getElementById("result3").innerHTML = "Answer for (-1, -1, 0) is "+calculation(-1, -1, 0);
+        document.getElementById("result4").innerHTML = "Answer for (1, -1, 0) is "+calculation(1, -1, 0);
+
+
+        function check(){
+            var num1  = Number(document.getElementById("input1").value);
+            var num2  = Number(document.getElementById("input2").value);
+            var num3 = Number(document.getElementById("input3").value);
+
+            var ans = calculation(num1,num2,num3);
+            document.getElementById("result1").innerHTML = "Answer is "+ans;
+
+        }
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+

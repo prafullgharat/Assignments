@@ -1,0 +1,61 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <h3>
+        29) Write a function that takes a list of strings and prints them, one per line, in
+        a rectangular frame. For example the list ["Hello", "World", "in", "a", "frame"]
+        gets printed as:
+         *********
+         * Hello *
+         * World *
+         * in *
+         * a *
+         * frame *
+         ********* 
+        
+     </h3>
+
+     <p>list = ["Hello", "World", "in", "a", "frame"]</p>
+     <p>Output=></p>
+     
+     <script>
+        
+        function rectangle(list){
+            
+            var maxLengthVariable = list.sort(function (a, b) { return b.length - a.length })[0];
+            var maxLength = maxLengthVariable.length;
+
+            var str = "*".repeat(maxLength+2);
+            var array = [];
+            array.push(str);
+           
+            str="";
+            for(i = 0; i < list.length; i++){
+                str = "*" + list[i] + " ".repeat(maxLength-list[i].length) +"*";
+                array.push(str);
+            }
+
+            array.push("*".repeat(maxLength+2));
+            console.log(array);
+
+            for(i=0;i<array.length;i++){
+                document.write("<p>"+array[i]+"</p>");
+                console.log(array[i]);
+            }
+
+
+        }
+        
+
+        var arr = [ "Hello", "World", "in", "a", "frame" ];
+        rectangle(arr);
+     </script>
+     
+ </body>
+ </html>

@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>4. Recent JavaScript versions added the “map” method of arrays, as we saw in the notes and used in
+        the previous set of exercises. But, in earlier JavaScript versions, you had to write it yourself. Make
+        a function called “map” that takes an array and a function, and returns a new array that is the result
+        of calling the function on each element of the input array. Don’t use map, filter, or reduce.
+        map([1, 2, 3, 4, 5], square); --> [1, 4, 9, 16, 25]
+        map([1, 4, 9, 16, 25], Math.sqrt); --> [1, 2, 3, 4, 5]
+        Hint: remember the push method of arrays</h3>
+
+
+        <br><br>
+      
+
+        Array :
+        <input type="text" id="input" value="1,4,9,16,25">
+        <br>
+        <button onclick="arraySquare()">Square</button>
+        
+        <button onclick="arraySqrt()">Square Root</button>
+        <br>
+        <p id="result"></p>
+
+
+        <script>
+             function square(x){
+                return (x*x);
+            }
+            function map(list,func){
+                var list2 = [];
+                for(i=0;i<list.length;i++){
+                    list2.push(func(list[i]));
+                }
+                return list2;
+            }
+
+    
+            function arraySquare() {
+                var list = document.getElementById("input").value.split(",");
+                var result = map(list, square);
+                document.getElementById("result").textContent="Square of the array elements are: "+result;
+            }
+            function arraySqrt() {
+                var list = document.getElementById("input").value.split(",");
+                var result = map(list, Math.sqrt);
+                document.getElementById("result").textContent="Square of the array elements are: "+result;
+            }
+        
+        </script>
+</body>
+</html>

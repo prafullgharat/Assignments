@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>5. Write a function that, given an array of strings, will compute the sum of the lengths of the words
+         that do not contain a “q”. Do not use a loop or the forEach method, only array methods (filter, map,
+         reduce) and string methods/properties (indexOf, length).
+         var test1 = ["stop", "quit", "exit"];
+         lengthOfNonQWords(test1); --> 8
+         var test2 = ["queen", "quit"];
+         lengthOfNonQWords(test2); --> 0</h3>
+
+<br>
+         Array :
+         <input type="text" id="input" value="stop,quit,exit">
+         <br>
+         <button onclick="check()">Length</button>
+         
+        
+         <br>
+         <p id="result"></p>
+
+<script>
+        function lengthOfNonQWords(words){
+
+            console.log(words);
+
+            var filtered = words.filter(word => word.indexOf("q")==-1);
+            console.log(filtered);
+
+            var mapped = filtered.map(res => res.length)
+            console.log(mapped);
+
+            var sum = mapped.reduce(function(total, num) {return total + num;});
+            console.log(sum);
+            
+            return sum;
+                
+        }
+
+
+        function check(){
+            var list = document.getElementById("input").value.split(",");
+            var result = lengthOfNonQWords(list);
+            document.getElementById("result").textContent='sum of the lengths of the words that do not contain a “q” is '+result;
+
+        }
+
+</script>
+</body>
+</html>

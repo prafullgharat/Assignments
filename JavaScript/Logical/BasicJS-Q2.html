@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>2. Create an array containing 100 random numbers. Use two-step array allocation. Print out the array.
+        var hundredNums = ...;
+        for(...) { ... }
+        hundredNums; --> [0.8742489161574934, 0.7147785711684753, 0.8062322101495641,
+        ...
+        0.41288219216760613, 0.5113443687277072]
+
+              
+    </h3>
+
+    <br><br>
+
+    
+   
+    <p id="result"></p>
+    
+    <script>
+        
+        var hundredNums = [];
+        for (i = 0; i < 100; i++){
+            hundredNums.push(Math.random());
+        }
+
+        console.log(hundredNums);
+
+        document.getElementById("result").innerHTML = "Array is ["+hundredNums +"]";
+       
+       
+        
+    </script>
+</body>
+</html>

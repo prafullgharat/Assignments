@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>2. Add a getArea method. Use the prototype property.</h3>
+    <br><br>
+
+
+    Rectangle<br>
+    Height:<input type="text" id="height" value="5">
+    <br>
+    width:<input type="text" id="width" value="7">
+    <br>
+
+    <input type="button" value="Get Area" onclick="getResult()">
+    
+    <p id="result"></p>
+    
+
+
+    <script>
+        class Rectangle{
+            constructor (height,width){
+                this.height = height;
+                this.width = width;
+                
+            }
+        }
+        Rectangle.prototype.getArea = function(){
+            return(this.height*this.width); 
+        }
+
+
+
+        function getResult(){
+            var height = document.getElementById("height").value;
+            var width = document.getElementById("width").value;
+            
+            var rectangle = new Rectangle(height,width);
+            var area = rectangle.getArea();
+
+            document.getElementById("result").innerHTML="Area of Rectangle : "+area;
+           
+
+        }
+    </script>   
+</body>
+</html>

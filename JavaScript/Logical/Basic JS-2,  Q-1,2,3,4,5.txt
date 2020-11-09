@@ -1,0 +1,27 @@
+Basic JS-2,   Q-1,2,3,4,5 
+Console Output-->
+
+
+var x = 5;
+undefined
+x
+5
+function half(x){
+    return(x/2);
+}
+undefined
+half(x);
+2.5
+half(4);
+2
+half(3);
+1.5
+x
+5
+function seven(){
+    x = 7;
+    return(x);
+}
+undefined
+x
+5

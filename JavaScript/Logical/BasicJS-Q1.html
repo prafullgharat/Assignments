@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 1. Create an array containing four random numbers. Use one-step array allocation. Print out the array
+        by evaluating the array variable in Firebug.
+        var fourNums = ...;
+        fourNums; --> [0.871570877817405, 0.9107447521970577,
+        0.743357509580703, 0.6571292972456975]
+              
+    </h3>
+
+    <br><br>
+
+    
+   
+    <p id="result"></p>
+    
+    <script>
+        
+        var fourNums = [Math.random(), Math.random(), Math.random(), Math.random()];
+        // document.write(fourNums);
+        console.log(fourNums);
+        document.getElementById("result").innerHTML = "Array is ["+fourNums +"]";
+       
+       
+        
+    </script>
+</body>
+</html>
+
+

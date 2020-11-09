@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Assignment 1:
+        Create a simple page that lets users type in some temperature value in the Fahrenheit scale and
+        example, if the user types
+        Functionality
+        At the least, your program should allow for the following
+        User Input: One text field where the user will type in the temperature in Fahrenheit
+        n is clicked, your program should check to see if
+        the user has left the text field empty and also if what the user typed is a number and not anything
+        else.
+        If there are problems (as in II. above) then your program should show appropriate error
+        messages
+        Display results: If there are no errors and user input is valid, then your program should show the
+        results to the user
+        
+        </h3>
+
+        <br><br>
+    <form>
+        <label for="temperature">Please Enter Temperature in Fahrenheit:</label>
+        <input type="text" name="temperature" id="temperature">
+        <br>
+        <input type="button" value="convert" onclick="convert()">
+       
+    </form>
+    <p id="result"></p>
+    <p id="error"></p>
+    <script>
+
+        function convert(){
+            
+            var temp = document.getElementById("temperature").value;
+            if(temp == ""){
+                document.getElementById("error").innerHTML="Please enter a value.";
+            }
+            else if(isNaN(temp)){
+                document.getElementById("error").innerHTML="Please enter a number.";
+
+            }
+            else{
+                var celcius = (temp-32)*5/9;
+                document.getElementById("result").innerHTML="Temperature in celcius :   "+celcius;
+
+            }
+        }
+    </script>
+
+</body>
+</html>

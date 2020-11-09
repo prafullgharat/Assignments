@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>22) Write a function that rotates a list by k elements. For example [1,2,3,4,5,6]
+        rotated by two becomes [3,4,5,6,1,2]. Try solving this without creating a
+        copy of the list. How many swap or move operations do you need? 
+    </h3>
+
+
+    <br><br>
+
+   
+   <p> List = [1,2,3,4,5,6] </p>
+   <p>Number = 2</p>
+   <p id="shiftedArray">
+
+   </p>
+
+    <script>
+        function rotate(list,num){
+            var temp;
+            for(i=0;i<num;i++){
+                temp = list[0];
+                for(j=0;j<list.length;j++){           
+                    list[j] = list[j+1];
+                }
+                list[list.length-1] = temp;
+            }
+            // return list;
+        
+        }
+
+        var list = [1,2,3,4,5,6];
+        var num = 2;
+        rotate(list,num);
+        document.getElementById("shiftedArray").innerHTML = "Shifted array is: " +list;
+
+    </script>
+</body>
+</html>

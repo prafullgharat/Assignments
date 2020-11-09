@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>30) Write function that translates a text to Pig Latin and back. </h3>
+    <br><br>
+    <p>text : The quick brown fox</p>
+    <p>Pig latin : <span id="result"></span></p>
+
+    <script>
+        function translate(text){
+            var strArray = text.split(" ");
+            for(i=0; i<strArray.length; i++){
+                var len = strArray[i].length;
+                strArray[i] = strArray[i].slice(1,len) + strArray[i].slice(0,1).toLowerCase() + "ay";
+            }
+
+            var result = strArray.join(" ");
+            result = result.charAt(0).toUpperCase() +result.slice(1);
+            console.log(result);
+            return result;
+
+        }
+        document.getElementById("result").innerHTML =  translate("The Quick brown fox");
+    </script>
+
+</body>
+</html>

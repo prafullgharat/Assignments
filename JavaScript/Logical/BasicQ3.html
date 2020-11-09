@@ -1,0 +1,64 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 3. Copy the flipCoin function from the last set of exercises. Now, make a function that, given a number, 
+         flips a coin that many times and returns the number of heads.
+         numHeads(10); --> 4
+         numHeads(10); --> 6
+         numHeads(10); --> 6
+        
+    </h3>
+
+    <br><br>
+    Number of flips:<input type="text" id="input1"><br>
+   
+<br>
+    <button onclick="check()">Heads</button>
+    <br>
+   
+    <p id="result"></p>
+    
+    <script>
+        function numHeads(flips){
+            var heads = 0;
+            for(i=0; i<flips; i++){
+                var no =  Math.floor(Math.random(0,1)*10+1);   
+              
+                if(no > 5){
+                    heads += 1;
+                }
+
+            }
+            return heads;
+        }
+
+        
+
+        function check(){
+            var flips  = Number(document.getElementById("input1").value);
+           
+            var heads = numHeads(flips);
+            document.getElementById("result").innerHTML = "No of Heads :"+heads;
+
+        }
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

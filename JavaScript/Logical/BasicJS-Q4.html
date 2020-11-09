@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 4. Write a function that, given a string, will return the longest token (consecutive string of characters)
+        that contains neither an a nor a b.
+        longestToken("ababcdababefgababhiab"); --> "efg"
+        longestToken("aba"); --> ""
+    </h3>
+
+    <br><br>
+    String: <input type="text" id="input1" value="ababcdababefgababhiab"><br>
+   
+<br>
+    <button onclick="check()">Longest Token</button>
+    <br>
+   
+    <p id="result"></p>
+    
+    <script>
+
+        
+        function longestToken(str){    
+
+            var str2 = str.replaceAll("a", " ");
+            console.log(str2);
+            var str3 = str2.replaceAll("b"," ");
+            console.log(str3);
+
+            var array1 = str3.split(" ");
+            console.log(array1);
+
+            var subString = "";
+            for( i= 0; i < array1.length ; i++){
+                if(array1[i].length > subString.length){
+                    subString = array1[i];
+                }
+            }
+
+            return subString;
+        }
+
+        function check(){
+            var string  = document.getElementById("input1").value;
+        
+            document.getElementById("result").innerHTML = "Longest token is "+longestToken(string);
+
+        }
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

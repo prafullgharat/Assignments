@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        28) Implement binary search. 
+    </h3>
+
+
+    <br><br>
+    <p>List=[21,23,34,39,45]</p>
+    <p>key = 23</p>
+    <p>Result : <span id="result"></span></p>
+    <script>
+        function binarySearch(list, key, start, end) {
+            if (start > end){
+                 return false;
+            }
+            var middle=Math.floor((start + end)/2); 
+
+            if (list[middle]===key){
+                 return true;
+            }
+
+            if(list[middle] > key) {
+                return binarySearch(list, key, start, middle-1); 
+            }
+            else{
+                return binarySearch(list, key, middle+1, end); 
+            }
+        } 
+
+        var list = [21,23,34,39,45]; 
+        var key = 23;
+        var bool = binarySearch(list,key,0,list.length-1);
+        if(bool){
+            document.getElementById("result").innerHTML = "Element is present in the list";
+        }
+        else{
+            document.getElementById("result").innerHTML = "Element is not present in the list";
+        }
+    </script>
+</body>
+</html>

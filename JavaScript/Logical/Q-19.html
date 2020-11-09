@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>Write a function that concatenates two lists</h3>
+    <br><br>
+
+    <p>list1 = ["a", "b", "c"];</p>
+    <p>list2 = [1,2,3];</p>
+    <p id="concatenated-list"></p>
+
+    <script>
+        function concatenate(list1,list2){
+            for(i = 0; i<list2.length; i++){
+                list1.push(list2[i]);
+            }
+            return list1;
+        }
+
+        var list1 = ["a", "b", "c"];
+        var list2 = [1,2,3];
+        var list3 = concatenate(list1, list2);
+        document.getElementById("concatenated-list").innerHTML = " Concatenated list: " + list3;
+
+    </script>
+</body>
+</html>

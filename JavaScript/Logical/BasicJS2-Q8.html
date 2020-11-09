@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 8. Write a function called isEven that, given a number, returns true if the number is even and false if
+      the number is odd. This would be simple if we had covered if statements or the ?: ternary operator,
+      but we haven’t, so you cannot use either one.      
+    </h3>
+
+    <br><br>
+    <input type="text" id="input">
+    <button onclick="check()">Check</button>
+    <br>
+    Result:
+    <p id="result"></p>
+    
+    <script>
+         function isEven(num){
+            var array = ["true", "false"];
+            return array[num%2];
+         }
+
+
+        
+        function check(){
+            var num  = Number(document.getElementById("input").value);
+            var result = isEven(num);
+            document.getElementById("result").innerHTML = result;
+
+        }
+        
+    </script>
+</body>
+</html>
+
+
+
+

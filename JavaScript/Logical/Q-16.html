@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>16) Write a function that tests whether a string is a palindrome.</h3>
+
+    <br><br><br>
+    
+    
+    <p id="str1"></p>
+    <p id="str2"></p>
+
+    <script>
+        function isPalindrome(str){
+
+            var reverse = '';
+            for(i=str.length-1; i>=0; i=i-1){
+                reverse += str[i];
+            }
+            if(str === reverse){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        var str1 = "abcddcba";
+        if(isPalindrome(str1)){
+            document.getElementById("str1").innerHTML = str1 +" is a palindrome.";
+
+        }
+        else{
+            document.getElementById("str1").innerHTML = str1 +" is not a palindrome.";
+        }
+        
+        var str2 = "abcd";
+        if(isPalindrome(str2)){
+            document.getElementById("str2").innerHTML = str2 +" is a palindrome.";
+
+        }
+        else{
+            document.getElementById("str2").innerHTML = str2 +" is not a palindrome.";
+        }
+
+    </script>
+</body>
+</html>

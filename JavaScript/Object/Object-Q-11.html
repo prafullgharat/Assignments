@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        4. Create a JS program to implement below:-
+        BankAccount
+       |(accountNumber)
+       |(accountHolderName)
+       |(accountBalance)
+       -------------------------
+       | |
+       Savings Current
+        (isSalary) (odLimit)
+       Now,
+       create 1 object of savings with accountNumber, accountHolderName, accountBalance and isSalary.
+       create 1 object of currrent with accountNumber, accountHolderName, accountBalance and odLimit.
+       use savings account object to call a function withdraw(amount), that will subtract the amount from the
+       accountBalance, Note that accountBalance should not go below 0.
+       use current account object to calla function withdraw(amount), that will subtract the amount from the
+       accountBalance, Note that accountBalance should not go below negative of odLimit.
+       Now, call getCurrentBalance() from both the object, that will return the accountBalance of the object
+       used to call this method.
+    </h3>
+
+
+       <p>Savings Account:</p>
+       <p> Object: <span id="savings-object"></span></p>
+       <p>  
+           <input type="text" name="savings-withdraw-input" id="savings-withdraw-input">
+            <button onclick="withdraw1()">withdraw</button>
+       </p>
+       <p><button onclick="balance1()">Get Balance</button></p>
+       <p id="result1"></p>
+
+       <br>
+       <p>Current Account:</p>
+       <p> Object: <span id="current-object"></span></p>
+       <p>
+           <input type="text" name="current-withdraw-input" id="current-withdraw-input">
+           <button onclick="withdraw2()">withdraw</button>
+        </p>
+       <p><button onclick="balance2()">Get Balance</button></p>
+       <p id="result2"></p>
+
+
+       <script>
+
+            function BankAccount(accountNumber, accountHolderName, accountBalance){
+                this.accountNumber=accountNumber;
+                this.accountHolderName=accountHolderName;
+                this.accountBalance=accountBalance;
+
+            }
+            
+            var Savings=new BankAccount(1345,"Rohit", 50000);
+            Savings.isSalary = true;
+            var Current=new BankAccount(6789,"Surya",30000);
+            Current.odLimit = 1000;
+
+            document.getElementById("savings-object").innerHTML=JSON.stringify(Savings);
+            document.getElementById("current-object").innerHTML=JSON.stringify(Current);
+
+
+            Savings.withdraw=function(amount){
+                if((Savings.accountBalance-amount)>=0){
+                    Savings.accountBalance -= amount;
+                    document.getElementById("result1").innerHTML="Amount withdrawn.";
+                }
+                else{
+                    document.getElementById("result1").innerHTML="Balance should not go below 0.";
+                }
+            }
+
+            Current.withdraw=function(x){
+                if((Current.accountBalance-x)>=Current.odLimit){
+                    Current.accountBalance -= x; 
+                    document.getElementById("result2").innerHTML="Amount withdrawn.";
+                }
+                else{
+                    document.getElementById("result2").innerHTML="Minimum account balance is "+Current.odLimit;
+                }
+            }
+
+            BankAccount.prototype.getCurrentBalance=function(){               
+                    return this.accountBalance;                
+            }
+
+
+
+          
+            function withdraw1(){
+                var amount = document.getElementById("savings-withdraw-input").value;
+                Savings.withdraw(amount);
+                document.getElementById("savings-object").innerHTML=JSON.stringify(Savings);
+            }
+            function withdraw2(){
+                var amount = document.getElementById("current-withdraw-input").value;
+                console.log(amount);
+                Current.withdraw(amount);
+                document.getElementById("current-object").innerHTML=JSON.stringify(Current);
+            }
+
+            function balance1(){
+                document.getElementById("result1").innerHTML="Balance is :"+Savings.getCurrentBalance();
+            }
+            function balance2(){
+                document.getElementById("result2").innerHTML="Balance is :"+Current.getCurrentBalance();
+            }
+
+ 
+       </script>
+</body>
+</html>

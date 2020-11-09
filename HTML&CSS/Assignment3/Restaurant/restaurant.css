@@ -192,7 +192,7 @@ footer{
     text-align: center;
     margin-top: 100px;
     color:rgb(24, 26, 27);
-    /* font-family: Century Gothic, sans-serif; */
+    font-family: Century Gothic, sans-serif;
     font-size: 30px;
     padding: 50px;
 }
@@ -364,6 +364,7 @@ footer{
 
     #about p{    
         text-align: center;
+        /* font-size: 15px; */
     }
     
 }
@@ -423,6 +424,11 @@ footer{
         padding: 5px;
         font-size: 15px;
     } 
+
+    #about p{    
+        text-align: center;
+        font-size: 18px;
+    }
 }
 
 
@@ -455,5 +461,9 @@ footer{
         height: 250px;
         width: 250px;
        
+    }
+    #about p{    
+        text-align: justify ;
+        font-size: 15px;
     }
 }

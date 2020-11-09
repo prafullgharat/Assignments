@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 4. Make a function that takes a number of flips and returns the fraction that were heads.
+        headsRatio(10); --> 0.7
+        headsRatio(10); --> 0.4
+        headsRatio(10000); --> 0.5023
+        headsRatio(10000000); --> 0.4999948
+        
+    </h3>
+
+    <br><br>
+    Number of flips:<input type="text" id="input1"><br>
+   
+<br>
+    <button onclick="check()">Fraction</button>
+    <br>
+   
+    <p id="result"></p>
+    
+    <script>
+
+        function headsRatio(flips){
+            var heads = 0;
+            for(i=0; i<flips; i++){
+                var no =  Math.floor(Math.random(0,1)*10+1);   
+                // console.log(no);
+                if(no > 5){
+                    heads += 1;
+                }
+            }
+            var ratio =  heads/flips;
+            
+            return ratio;
+        }
+
+       
+        function check(){
+            var flips  = Number(document.getElementById("input1").value);
+           
+            var fraction = headsRatio(flips);
+            document.getElementById("result").innerHTML = "Fraction :"+fraction;
+
+        }
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

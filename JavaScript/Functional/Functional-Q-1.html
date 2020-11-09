@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1. Make a function called composedValue that takes two functions f1 and f2 and a value and returns
+        f1(f2(value)), i.e., the first function called on the result of the second function called on the value.
+        function square(x) { return(x*x); }
+        function double(x) { return(x*2); }
+        composedValue(square, double, 5); --> 100 // I.e., square(double(5))
+    </h3>
+
+    <br><br><br>
+  
+    Number :
+    <input type="text" id="input" value="5">
+        <br>
+    <button onclick="test1()">Square of the double</button>
+    <button onclick="test2()">Double of the square</button>
+    <p id="result"></p>
+
+
+    <script>
+        function square(x) {
+             return(x*x); 
+        }
+        function double(x) {
+             return(x*2); 
+        }
+
+        function  composedValue(f1, f2, value) {
+            return f1(f2(value));
+        }
+
+        
+
+        function test1() {
+                var value = document.getElementById("input").value;
+                var result =  composedValue(square, double, value);
+                document.getElementById("result").textContent="Square of the double of "+value+" is :"+result;
+            }
+            
+        function test2() {
+                var value = document.getElementById("input").value;
+                var result = composedValue(double, square, value);
+                document.getElementById("result").textContent="Double of the square of "+value+" is :"+result;
+        }
+    </script>
+</body>
+</html>

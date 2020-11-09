@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        13) Write a function that checks whether an element occurs in a list. 
+    </h3>
+
+    <p>list = [12,34,566,67], element = 34</p>
+    <p id = "result1"> </p>
+    <br><br>
+    <p>list = ["Banana", "Orange", "Apple"], element = "Mango"</p>
+    <p id = "result2"> </p>
+
+    <script>
+        function isPresent(list,element){
+            for(i=0;i<list.length;i++){
+                if(list[i] === element){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        list1 = [12,34,566,67];
+        element1 = 34;
+        if(isPresent(list1,element1)){
+            document.getElementById("result1").innerHTML = "Element is present";
+        }
+        else{
+            document.getElementById("result1").innerHTML = "Element is  not present";
+        }
+
+        list2 = ["Banana", "Orange", "Apple"];
+        element2 ="Mango";
+        if(isPresent(list2,element2)){
+            document.getElementById("result2").innerHTML = "Element is present";
+        }
+        else{
+            document.getElementById("result2").innerHTML = "Element is  not present";
+        }
+    </script>
+</body>
+</html>

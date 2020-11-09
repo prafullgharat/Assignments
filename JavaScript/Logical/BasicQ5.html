@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 
+        5. Make a function that takes a number and a short string, and returns the string concatenated that
+        number of times.
+        padChars(5, "x"); -> "xxxxx"
+        padChars(7, "-"); -> "-------"
+    </h3>
+
+    <br><br>
+    String:<input type="text" id="input1"><br>
+    Number:<input type="text" id="input2"><br>
+
+   
+<br>
+    <button onclick="check()">check</button>
+    <br>
+   
+    <p id="result"></p>
+    
+    <script>
+        function padChars(no, string){
+            var str = "";
+            for (i=0; i<no; i++){
+                str = str + string;
+            }
+            console.log(str)
+            return str;
+        }
+
+        function check(){
+            var str  = document.getElementById("input1").value;
+           
+            var num =  Number(document.getElementById("input2").value);
+
+            document.getElementById("result").innerHTML = "New String:"+padChars(num , str);
+
+        }
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

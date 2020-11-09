@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</html>
+        <h3>17) Write three functions that compute the sum of the numbers in a list: using
+            a for-loop, a while-loop and recursion. (Subject to availability of these
+            constructs in your language of choice.) 
+        </h3>
+
+
+        <p>list = [10,25,50,100]</p>
+        <p>sum using for loop : <span id="for"></span> </p>
+        <p>sum using while loop : <span id="while"></span> </p>
+        <p>sum using recursion : <span id="recursion"></span> </p>
+
+        <script>
+             
+            function forLoop(li){
+               
+                var len = li.length;
+                var sum = 0;
+                for(i = 0; i < len; i++ ){
+                    sum += li[i];
+                }
+                return sum;
+
+            }
+
+            function whileLoop(li){
+              
+                var len = li.length;
+                var i = 0;
+                var sum = 0;
+                while(i < len){
+                    sum += li[i]; 
+                    i++;
+                }
+               return sum;
+            }
+            
+            function recursion(li, i){
+                if(li.length === 0){
+                    return 0;
+                }
+                else if(i === (li.length-1)){
+                    return li[i];
+                }
+                else{
+                    return li[i] + recursion(li, i+1); 
+                }
+            }
+
+            var li = [10,25,50,100];
+            document.getElementById("for").innerHTML = forLoop(li);
+            document.getElementById("while").innerHTML = whileLoop(li);
+            document.getElementById("recursion").innerHTML = recursion(li, 0);
+
+        </script>
+</body>
+</html>

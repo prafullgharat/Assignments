@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>3. Make a function that given an array of strings, where each string represents a number, returns an
+        array of the corresponding numbers.
+        var strings = ["1.2", "2.3", "3.4"];
+        var nums = numberArray(strings);
+        nums; --> [1.2, 2.3, 3.4] 
+    </h3>
+
+    <br><br>
+   
+    <p id="result1"></p>
+    <p id="result2"></p>
+
+    
+    <script>
+        
+        function numberArray(strings){
+            var numbers = [];
+            for(i = 0; i < strings.length; i++){
+                numbers.push(parseFloat(strings[i]));
+            }
+            return numbers;
+        }
+
+        var strings = ["1.2", "2.3", "3.4"];
+        var nums = numberArray(strings);
+        console.log(nums);
+
+        document.getElementById("result2").innerHTML = "Number Array  is ["+nums +"]";
+
+       
+       
+        
+    </script>
+</body>
+</html>

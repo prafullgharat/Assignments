@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>14) Write a function that returns the elements on odd positions in a list. </h3>
+
+    <br><br><br>
+    
+    
+    <p id="list"></p>
+    <p id="oddList"></p>
+
+    <script>
+        function oddElements(list){
+            list2 = [];
+            for(i=0;i<list.length;i=i+2){
+                list2.push(list[i]);
+            }
+            return list2;
+        }
+
+        var list = [1,34,566,34,77,89,12,45];
+        document.getElementById("list").innerHTML = "List: " +list;
+
+        var oddList = oddElements(list);
+        document.getElementById("oddList").innerHTML = "Odd List: " +oddList;
+
+
+    </script>
+</body>
+</html>

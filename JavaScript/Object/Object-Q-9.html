@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        2. Modify the above program to create 2 objects, amitabh and abhishek, here abhishek has some
+        common properties from amitabh, try to use it such common properties from amitabh instead of
+        creating it in abhishek.
+    </h3>
+
+    <p></p>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <p id="result4"></p>
+    <script>
+        function person(fname,lname,age,skills,dateofbirth,address,married,profession){
+                this.fname=fname;
+                this.lname=lname;
+                this.age=age;
+                this.skills=skills;
+                this.dateofbirth=dateofbirth;
+                this.address=address;
+                this.married=married;
+                this.profession=profession;
+                }
+
+       var amithab=new person("amithab","bachan",22,["c"],"24/10/1996",{city:"hyderabad",pincode:"521185"},"false","sr analyst");
+      
+       var abhisheik=Object.create(amithab);
+
+        abhisheik.fname = "abhisheik";
+        abhisheik.age = 21;
+        abhisheik.skills = "HTML";
+        abhisheik.dateofbirth = "08/06/1997";
+        abhisheik.married = "false";
+        abhisheik.profession = "jr analyst";
+
+     
+        print=function()
+        {
+            document.getElementById("result1").innerHTML="<h3>Amitabh Object:</h3>"+JSON.stringify(amithab);
+            console.log(amithab);
+
+            document.getElementById("result2").innerHTML="<h3>Abhisheik Object:</h3>"+JSON.stringify(abhisheik);
+            console.log(abhisheik);
+            
+            document.getElementById("result3").innerHTML="<h3>Abhisheik Last Name:</h3>"+abhisheik.lname;
+            console.log(abhisheik.lname);
+
+            document.getElementById("result4").innerHTML="<h3>Abhisheik address:</h3>"+JSON.stringify(abhisheik.address);
+            console.log(abhisheik.address);
+        }();
+    </script>
+</body>
+</html>

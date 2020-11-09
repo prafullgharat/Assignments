@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 6. Write a function that returns the number of times you have to roll a die to get a 6.
+        (Minor hint: compare Math.random() to 5/6).
+        numRollsToGetSix(); --> 13
+        numRollsToGetSix(); --> 2
+    </h3>
+
+    <br><br>
+
+    <button onclick="check()">Roll</button>
+    <br>
+   
+    <p id="result"></p>
+    
+    <script>
+
+        function numRollsToGetSix(){
+            // var six;
+            var num;
+            var count=1;
+            var boolean  = true;
+            while(boolean){
+                num = (Math.floor(Math.random() * 6 )) + 1;
+                if(num === 6){
+                    return count;
+                }
+                else{
+                    count++;
+                }
+            }
+        }
+
+       
+        function check(){
+           
+            document.getElementById("result").innerHTML = "No of rolls to get 6 is "+numRollsToGetSix();
+
+        }
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

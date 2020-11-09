@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1. Make a “pure” recursive version of find. That is, don’t use any explicit loops (e.g. for loops or the
+        forEach method), and don’t use any local variables (e.g., var x = ...) inside the functions. Hint:
+        remember the slice method of arrays.
+        function isEven(num) { return(num%2 == 0); }
+        isEven(3) --> false
+        isEven(4) --> true
+        find([1, 3, 5, 4, 2], isEven); --> 4
+    
+    </h3>
+    <br><br><br>
+    
+    Array :<input type="text" id="input" value="1, 3, 5, 4, 2">
+    <br>
+    <br>
+    click here to find first even number in the array.
+    <br>
+    <button onclick="test()">Find</button>
+    
+    <br>
+    <p id="result"></p>
+
+    <script>
+        function isEven(num) {
+            return(num%2 == 0);
+        }
+
+        function find(list,func) {
+             if(list.length === 0){
+                 return "undefined";
+             }
+             else if(func(list[0])){
+                 return list[0];
+             }
+             else{
+                return find(list.slice(1),func);
+             }
+        }
+
+
+        function test(){
+         
+            var list = document.getElementById("input").value.split(",");
+            var result = find(list,isEven) ;
+            document.getElementById("result").textContent="Result: "+result;
+        }
+
+    
+    </script>
+</body>
+</html>

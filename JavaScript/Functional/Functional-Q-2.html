@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        2. Make a function called compose that takes two functions f1 and f2 and returns a new function that,
+            when called on a value, will return f1(f2(value)). Assume that f1 and f2 each take exactly one argument.
+            var f1 = compose(square, double);
+            f1(5); --> 100
+            f1(10); --> 400
+            var f2 = compose(double, square);
+            f2(5); --> 50
+            f2(10); --> 200
+    </h3>
+    <br><br><br>
+    
+    Number :
+    <input type="text" id="input" value="5">
+        <br>
+    <button onclick="test1()">Square of the double</button>
+    <button onclick="test2()">Double of the square</button>
+    <p id="result"></p>
+    
+    <script>
+            function square(num){
+                return (num*num);
+            }
+
+            function double(num){
+                return(num*2);
+            }
+
+
+            function compose(f1,f2){
+               return function(x){
+                   return f1(f2(x));
+               };
+            }
+
+            var squareDouble = compose(square,double);
+            var doubleSqaure = compose(double,square);
+
+            
+            function test1() {
+                var value = document.getElementById("input").value;
+                var result = squareDouble(value);
+                document.getElementById("result").textContent="Square of the double of "+value+" is :"+result;
+            }
+            
+            function test2() {
+                var value = document.getElementById("input").value;
+                var result = doubleSqaure(value);
+                document.getElementById("result").textContent="Double of the square of "+value+" is :"+result;
+            }
+    </script>
+</body>
+</html>

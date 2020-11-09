@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Assignment5.css">
+</head>
+<body>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" onfocus="helpName()" onblur="helpDefault()"> 
+        <textarea name="help" id="help" cols="60" rows="5" readonly></textarea>
+        <br>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" onfocus="helpEmail()" onblur="helpDefault()"><br><br>
+        <strong>Toppings:</strong><br><br>
+        <label for="topping1">Extra Cheese:</label>  
+        <input type="checkbox" name="topping" id="topping1" value="Extra Cheese">       
+        <label for="topping2">Pepperoni:</label> 
+        <input type="checkbox" name="topping" id="topping2" value="Pepperoni">       
+        <label for="topping3">Olives: </label>
+        <input type="checkbox" name="topping" id="topping3" value="Olives">       
+        <label for="topping4">Pepper: </label>
+        <input type="checkbox" name="topping" id="topping4" value="Pepper">        
+        <label for="topping5">Bacon: </label>
+        <input type="checkbox" name="topping" id="topping5" value="Bacon">       
+        <label for="topping6">Tomatoes: </label>
+        <input type="checkbox" name="topping" id="topping6" value="Tomatoes">       
+        <label for="topping7">Mushrooms:</label> 
+        <input type="checkbox" name="topping" id="topping7" value="Mushrooms">
+        <br><br>
+
+        <strong>How do you want to get your pizza!</strong>
+        <label for="delivery">Delivery</label>
+        <input type="radio" name="get-pizza" id="delivery" value="Delivery">
+        <label for="pickup">Pickup</label>
+        <input type="radio" name="get-pizza" id="pickup" value="Pickup">
+        <br>
+        <br>
+
+       <strong>Tip?</strong>
+        <select name="tip" id="tip" onfocus="helpTip()" onblur="helpDefault()">
+            <option value="15">15%</option>
+            <option value="20">20%</option>
+            <option value="25">25%</option>
+        </select>    
+        <hr>
+
+        <p><label for="address">Address</label></p>
+        <textarea name="address" id="address" cols="60" rows="5" onfocus="helpAddress()" onblur="helpDefault()"></textarea>
+        <br>
+        <input type="button" value="Submit" onclick="validate()">
+        <input type="reset" value="Reset">
+        <input type="button" id="summary-button" value="Show Summary">
+
+    </form>
+    <p id="error"></p>
+    <p id="summary-heading"></p>
+    <div id="summary-table"></div>
+    <script src="Assignment5.js"></script>
+</body>
+</html>

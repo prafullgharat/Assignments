@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Assignment 3:
+        Create an HTML page that will Prompt the user:
+        It should take input for the number of rows and the number of columns
+        Then it should create a table (HTML table) with the given number of row and columns
+        Each cell of the table should contain the cell id (row#, col#) 
+    </h3>
+
+    <br>
+    <br>
+    <button onclick="create()">Create table</button>
+    <script>
+
+        function create(){
+            
+            var rows = prompt("Please enter number of rows:");
+            var columns = prompt("Please enter number of columns:");
+
+            var table = document.createElement("table");
+            table.setAttribute("border","1")
+            document.body.appendChild(table);
+    
+            for(i = 1; i <= rows; i++){
+                var tr =  document.createElement("tr");
+                table.appendChild(tr);
+                for(j = 1; j <= columns; j++){
+                    var cell = document.createElement("td");
+                    cell.setAttribute("id","("+i+","+j+")");
+                    var t = document.createTextNode("("+i+","+j+")");
+                    
+                    cell.appendChild(t);
+                    tr.appendChild(cell);
+                }
+            }
+        }
+       
+
+    </script>
+</body>
+</html>
