@@ -1,0 +1,59 @@
+<div class="container-fluid">
+
+    <h1>Advertisement Form Component</h1>
+<form  #advertisementForm = "ngForm"  (ngSubmit)="onSubmit(advertisementForm.value)" novalidate>
+    
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" name="title" [(ngModel)] = "advertisementModel.title" #title = "ngModel" [class.is-invalid]="title.invalid && title.touched" required>
+        <small class='text-danger' [class.d-none]="title.valid || title.untouched">Title is invalid</small>
+    </div>
+
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" [(ngModel)] = "advertisementModel.name"  class="form-control" name="name"  #name = "ngModel" [class.is-invalid]="name.invalid && name.touched" required>
+        <small class='text-danger' [class.d-none]="name.valid || name.untouched">Name is invalid</small>
+      </div>  
+
+      <div class="form-group">
+        <select class="custom-select" name="category" [(ngModel)] = "advertisementModel.category"
+        #category = "ngModel" [class.is-invalid]="categoryHasError && category.touched" 
+        (blur)="validateCategory(category.value)" (change)="validateCategory(category.value)" >
+         <option value="default" selected>select...</option>
+
+          <option *ngFor='let category of categories'>{{category}}</option>
+        </select>
+
+        <small class="text-danger" [class.d-none]="!categoryHasError || category.untouched">Please choose a Category</small>
+      </div>
+  
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text"class="form-control" name="description" [(ngModel)] = "advertisementModel.description">
+      </div>
+  
+  
+      <button  class="btn btn-primary" type="submit" [disabled]='advertisementForm.form.invalid || categoryHasError'>submit form </button>
+  
+    </form>
+<br><br>
+
+
+<!-- table inside form component -->
+    <!-- <h3>Table</h3>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Description</th>
+        </tr>
+        <tr *ngFor= 'let advertisement of advertisementList'>
+            <td>{{advertisement.title}}</td>
+            <td>{{advertisement.name}}</td>
+            <td>{{advertisement.category}}</td>
+            <td>{{advertisement.description}}</td>
+        </tr>
+    </table> -->
+  </div>
+  

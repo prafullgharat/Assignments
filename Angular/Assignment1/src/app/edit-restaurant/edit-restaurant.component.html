@@ -1,0 +1,6 @@
+<label>Edit Name:</label>
+<input type="text" [value] ="this.name" #input>
+<br>
+
+<button class="btn btn-primary ml-3" (click)="update(input.value)">Update</button>
+<button class="btn btn-primary ml-3" (click)="back()">Back</button>

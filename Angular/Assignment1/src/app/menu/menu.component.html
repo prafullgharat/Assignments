@@ -1,0 +1,26 @@
+
+<div>
+  <h1>Menu</h1>
+  <h2>Restaurant : {{this.resName}}</h2>
+  <table class="table">
+
+      <tr><th>Item</th><th>Price</th></tr>
+      <tr *ngFor="let item of this.menu">
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+          <td *ngIf="isAdmin"><button (click) = "editMenu(item.name)">Edit</button></td>
+          <td *ngIf="isAdmin"><button (click) = "deleteMenu(item)">Delete</button></td>
+
+          <td *ngIf="!isAdmin"><button (click) = "order(item)">Order</button></td>
+
+
+      </tr>
+      <tr *ngIf="isAdmin">
+        <td><input type="text" placeholder="Enter item name..." #newItem></td>
+        <td><input type="text" placeholder="Enter price ..." #newPrice></td>
+        <td><button (click)="addMenu(newItem.value,newPrice.value)">Add</button></td>
+      </tr>
+
+  </table>
+
+</div>

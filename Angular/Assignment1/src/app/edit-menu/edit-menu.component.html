@@ -1,0 +1,9 @@
+<h2>Edit Menu</h2>
+<label> Name:</label>
+<input type="text" [value] ="this.name" #itemName>
+<br>
+<label> Price:</label>
+<input type="text" [value] ="this.price" #itemPrice>
+<br>
+<button class="btn btn-primary ml-3" (click)="update(itemName.value,itemPrice.value)">Update</button>
+<button class="btn btn-primary ml-3" (click)="back()">Back</button>

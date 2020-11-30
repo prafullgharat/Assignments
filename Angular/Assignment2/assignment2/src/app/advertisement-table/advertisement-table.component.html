@@ -1,0 +1,29 @@
+<h2>Advertisement-table Component</h2>
+Search:<input type="text" [(ngModel)] = "val">
+
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th col-span=2>Actions</th>
+
+    </tr>
+
+    <tr *ngFor= 'let advertisement of advertisementList | search:val'>
+
+        <td>{{advertisement.title}}</td>
+        <td>{{advertisement.name}}</td>
+        <td>{{advertisement.category}}</td>
+        <td>{{advertisement.description}}</td>
+        <td>
+            <button class="btn btn-primary"  (click) = "editAd(advertisement)">Edit</button>
+        </td>
+        <td>
+            <button class="btn btn-primary" (click) = "deleteAd(advertisement)">Delete</button>
+        </td>
+    </tr>
+
+ 
+</table>

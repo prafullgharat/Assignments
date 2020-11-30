@@ -1,0 +1,13 @@
+
+<div>
+    <h1> Select Restaurant</h1>
+    <table class="table">
+        <tr><th>Name</th></tr>
+        <tr *ngFor="let restaurant of restaurants">
+            <td><button (click)="showMenu(restaurant)">{{restaurant.name}}</button></td>
+        </tr>
+       
+
+    </table>
+
+</div>

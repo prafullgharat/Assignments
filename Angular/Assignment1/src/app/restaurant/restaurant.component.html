@@ -1,0 +1,21 @@
+
+<div>
+    <h1>Restaurants</h1>
+    <div *ngIf="!isAdmin">
+        <h2>Please Login as admin</h2>
+    </div>
+    <div *ngIf="isAdmin">
+        <table class="table">
+            <tr><th>Name</th></tr>
+            <tr *ngFor="let restaurant of restaurants">
+                <td>{{restaurant.name}}</td>
+                    <td><button (click)="showMenu(restaurant)">Menu</button></td>
+                    <td><button (click)="editRes(restaurant)">Edit</button></td>
+                    <td><button (click)="deleteRes(restaurant)">Delete</button></td>
+            </tr>
+            <tr><td><input type="text" #newRes></td><td><button (click)="addRes(newRes.value)">Add</button></td></tr>
+
+        </table>
+    </div>
+
+</div>
