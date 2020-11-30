@@ -1,0 +1,13 @@
+
+Inspect Network Activity In Chrome DevTools
+Kayce Basques
+By Kayce Basques
+Technical Writer, Chrome DevTools & Lighthouse
+This is a hands-on tutorial of some of the most commonly-used DevTools features related to inspecting a page's network activity
+The Close button
+Figure 18. The Close button
+Search network headers and responses
+Use the Search pane when you need to search the HTTP headers and responses of all resources for a certain string or regular expression.
+For example, suppose you want to check if your resources are using reasonable cache policies.
+Click Search Search. The Search pane opens to the left of the Network log.
+
